@@ -1,0 +1,650 @@
+/*!
+ * CSS ACADEMICA - v. 2.0
+ * 2015 - Alex Aragón (aragonc@beeznest.com)
+ * OpenClipArt illustration (https://openclipart.org/detail/220955/pirate-ship-silhouette)
+ * Licensed GPL
+ * Based on Bootstrap
+*/
+
+:root {
+  --orange: #f8a41e;
+  --orange-50: #f8a41e6f;
+  --gray: #f2f2f2;
+  --radius: 10px;
+}
+
+/* Default single column layout */
+#course_category_202 .panel-body, 
+.classic-courses .panel-body {
+  grid-template-columns: 1fr; 
+}
+
+/* Two column layout for medium and up */
+@media (min-width: 480px) {
+  #course_category_202 .panel-body,
+  .classic-courses .panel-body {
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+} 
+
+/* Three column layout for large and up */  
+@media (min-width: 993px) {
+  #course_category_202 .panel-body,
+  .classic-courses .panel-body {
+    grid-template-columns: 0.33fr 0.33fr 0.33fr; 
+  }
+}
+
+/* Four column layout for extra large */
+@media (min-width: 1536px) {
+  #course_category_202 .panel-body,
+  .classic-courses .panel-body {
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+  }
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../chamilo/fonts/OpenSans-Light.woff2) format('woff2'), url(../chamilo/fonts/OpenSans-Light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../chamilo/fonts/OpenSans.woff2) format('woff2'), url(../chamilo/fonts/OpenSans.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../chamilo/fonts/OpenSans-Semibold.woff2) format('woff2'), url(../chamilo/fonts/OpenSans-Semibold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../chamilo/fonts/OpenSans-Bold.woff2) format('woff2'), url(../chamilo/fonts/OpenSans-Bold.woff) format('woff');
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+}
+body {
+  margin: 0 0 60px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.72222;
+}
+body > main footer.footer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.panel .panel-body, .classic-courses .panel-body, .classic-courses .panel-group, .panel-default .panel-body {
+    display:grid;
+    grid-gap: 10px;
+    grid-row-gap: 10%;
+    grid-column-start: 0;
+    box-sizing: border-box;
+    padding-top: none;
+    position: relative;
+}
+
+.classic-courses {
+    height: max-content;
+    overflow: visible;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border: none;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.classic-courses .row {
+    padding-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    border-left: 5px solid white;
+    border-radius: 0;
+}
+
+.classic-courses .row:hover {
+    /* background: var(--orange-50); */
+    border-left: 5px solid var(--orange);
+}
+
+
+/* Apply the animation to the .row elements */
+.classic-courses .panel {
+    opacity: 0;
+  animation-delay: 0.25s;
+    animation-duration: 0.75s;
+    animation-name: fadeInDown;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-40px);
+        -ms-transform: translateY(-40px);
+        transform:translateY(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform:translateY(0)
+    }
+}
+
+.sidebar .panel, .social-network-menu {
+       opacity: 0;
+  animation-delay: 0.25s;
+    animation-duration: 0.75s;
+    animation-name: fadeInRight;
+    animation-fill-mode: forwards; 
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name:fadeInDown
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-40px);
+        -ms-transform: translateX(-40px);
+        transform:translateX(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform:translateX(0)
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name:fadeInRight
+}
+
+.list-group {
+    margin-block-end: 0;
+}
+
+.list-group-item {
+    border-radius: 0 !important;
+}
+
+.hide_menu, .hide_menu a,
+.nav-stacked li a {
+    border: white;
+    border-radius: 10px;
+}
+
+.list-group-item:hover a, .hide_menu:hover,
+.nav-stacked li:hover a {
+    color: var(--orange);
+}
+
+.classic-courses .row img {
+    margin: none;
+}
+
+.classic-courses .col-md-2 .row a, .thumbnail {
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.classic-courses .row .col-md-10 {
+    width: -webkit-fill-available;
+    width: 100%;
+    height: auto;
+    padding-left: 5px;
+        padding-right: 5px;
+}
+
+.classic-courses .row .col-md-2 {
+    width: -webkit-fill-available;
+    width: 100%;
+    height: auto;
+    padding-left: 0px;
+        padding-right: 0px;
+}
+
+.breadcrumb,
+.panel-heading,
+.breadcrumb .active,
+.breadcrumb>li+li:before,
+.table-well{
+    background: var(--orange);
+    border-color: var(--orange);
+    border-radius: 10px;
+}
+
+.panel-default .panel-heading, .panel-default>.panel-heading {
+    border-radius: 0px;
+    background: transparent;
+    font-weight: bold;
+}
+
+.panel-heading {
+    border-radius: 10px;
+}
+
+.list-group-item a,
+.hide_menu a,
+.nav-stacked li a,
+th a{
+    color: black;
+    font-weight: 500;
+}
+
+.list-group-item a:hover,
+.hide_menu a:hover,
+.nav-pills li a:hover,
+.nav-stacked li a:hover{
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.panel-heading a:hover, th a {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.navbar-default,
+.navbar-toggle, .navbar-default .navbar-nav>li>a{
+    background: var(--orange);
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+.container {
+    width: 95%;
+}
+
+.breadcrumb>.active,
+.dropdown-menu .user-body a,
+.dropdown-menu .user-header .text-center a {
+    color: #fff !important;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--orange);
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus, .form-control {
+    background: #ffffff;
+    background-color: #ffffff !important;
+    color: black;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.dropdown-menu .user-body a {
+    color: black;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-nav .open .dropdown-menu {
+    background: var(--orange) !important;
+    background-color: var(--orange) important;
+    color: white;
+    font-weight: bold;
+    border-top: none;
+}
+
+.list-group li:hover,
+.list-group-item:hover,
+.hide_menu:hover,
+.nav-stacked li:hover,
+.list-items-admin li:hover,
+.list-group li:hover a,
+.list-group-item:hover a,
+.hide_menu:hover a,
+.nav-stacked li:hover a,
+.list-items-admin li:hover a{
+    color: var(--orange);
+    text-decoration: none;
+    background: transparent;
+}
+
+.list-group li,
+.list-group-item,
+.list-group-item a,
+.hide_menu a,
+.nav-stacked li a,
+.list-items-admin li a{
+    color: black;
+    text-decoration: none;
+}
+
+.list-group-item .item-icon {
+    vertical-align: center;
+    left: 0 !important;
+    position: relative !important;
+}
+
+.list-group-item:not(#search-block):not(.class_block) {
+    /*display: grid;*/
+    align-items: center;
+    grid-template-columns: 0.1fr 0.9fr;
+    text-align: left;
+}
+
+
+.navbar-toggle:hover {
+    background: #000000;
+    background-color: #000000 !important;
+}
+
+#home-welcome tr, #home-welcome h2{
+    display: grid;
+     opacity: 0;
+  animation-delay: 0.25s;
+    animation-duration: 0.75s;
+    animation-name: fadeInDown;
+    animation-fill-mode: forwards;
+}
+
+.avatar-user {
+    width: 100%;
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu .user-header .text-center a:hover,
+.breadcrumb .active a:hover {
+    color: black !important;
+    text-decoration: none;
+}
+
+.sidebar .list-group-item {
+    border: none;
+    margin-left: 0;
+}
+
+.dropdown-menu .user-body a {
+    font-weight: 500 !important;
+}
+
+header {
+    background: url("https://e-learning.ess-erfurt.de/web/css/themes/ESS/images/background.png") repeat-x center 50px;
+}
+
+a.thumbnail.active,
+a.thumbnail:focus,
+a.thumbnail:hover {
+    border-color: var(--orange);
+}
+
+/*
+.btn-default,
+.btn {
+    color: black;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+.btn-default:hover,
+.btn:hover,
+.btn-default:active:hover,
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover
+{
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+.pull-right .btn-group, .classic-courses .btn-group-vertical {
+    display: grid;
+}
+
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: var(--radius) !important;
+    border-top-right-radius: var(--radius) !important;
+}
+
+.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: var(--radius) !important;
+    border-bottom-right-radius: var(--radius) !important;
+}
+*/
+
+.view-options {
+    vertical-align: middle;
+}
+
+/*
+#toolimage_35523 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/folder_document.jpg');
+}
+
+#toolimage_35521 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/info_na.jpg');
+}
+
+#toolimage_35523 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/folder_document.jpg');
+}
+
+#toolimage_35524 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/scorms_na.jpg');
+}
+
+#toolimage_35525 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/links_na.jpg');
+}
+
+#toolimage_35526 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/quiz_na.jpg');
+}
+
+#toolimage_35527 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/valves.jpg');
+}
+
+#toolimage_35536 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/gradebook_na.jpg');
+}
+
+#toolimage_35537 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/glossary_na.jpg');
+}
+
+#toolimage_35539 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/attendance_na.jpg');
+}
+
+#toolimage_35540 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/course_progress_na.jpg');
+}
+
+#toolimage_35541 {
+    content: url('https://e-learning.ess-erfurt.de/web/css/themes/ESS/icons/32/info_na.jpg');
+}
+*/
+
+.data_table tr.row_odd:hover, .data_table tr.row_even:hover, .ui-jqgrid .ui-state-hover, .ui-jqgrid .ui-widget-content .ui-state-hover, .ui-jqgrid .ui-widget-header .ui-state-hover, tr:not(#home-welcome):hover {
+background-color: var(--orange-50) !important;
+}
+
+.social-network-menu .nav-pills li.active a, #groups-acordeon .nav li.active a {
+background: var(--orange);
+color: white;
+border: var(--orange);
+border-radius: 0px var(--radius) var(--radius) 0px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+text-decoration: none;
+color: var(--orange);
+    background: transparent;
+}
+
+.panel {
+   border-color: var(--orange);
+    border-radius: var(--radius);
+    border-width: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 2vh;
+}
+
+.alert-info {
+    color: white;
+    background-color: var(--orange);
+    border-color: var(--orange);
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.footer {
+    background: var(--gray);
+    color: black;
+}
+
+a {
+    color: black;
+    font-weight: 500;
+    hyphens: auto;
+}
+
+a:hover {
+    color: white;
+}
+
+#dropzone {
+    position: relative;
+    overflow: hidden;
+    direction: ltr;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    line-height: 50px;
+    background-color: var(--orange-50);
+    border: 2px dashed var(--gray);
+    font-size: 120%;
+    margin-bottom: 0;
+}
+
+.panel {
+    border-left: 5px solid var(--orange);
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0 !important;
+}
+
+a, .breadcrumb li:before {
+    color: black;
+    background: transparent;
+    font-family: Arial Rounded MT Bold;
+}
+
+.panel-heading a, .breadcrumb li, .breadcrumb li:before, .table-well td, .panel-heading{
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    background: transparent;
+}
+
+.breadcrumb a, .breadcrumb>li+li:before {
+    color: white;
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.big-icon .text-muted img {
+    width: 2px !important;
+}
+
+.big_icon img {
+padding: 5px;
+border-radius: 10px;
+box-shadow: none;
+    border: 1px solid #e6e6e6;
+    width: 50%;
+}
+
+.big_icon img:hover {
+box-shadow: 0 4px 18px var(--orange);
+}
+
+.panel-body:before {
+    display: none;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar, .navbar-default .navbar-toggle .icon-bar {
+background-color:white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.list-group-item:not(.active), 
+.nav-stacked>li:not(.active),
+img, a, tr, td, .row{
+    transition: all 0.3s; /* Fügt eine sanfte Übergangseffekt hinzu */
+}
+
+/* Stiländerungen beim Hovern */
+.list-group-item:not(.active):hover, 
+.nav-stacked>li:not(.active):hover {
+    color: #f8a41e; /* Textfarbe auf #f8a41e ändern */
+    padding-left: 20px; /* Text um 20px nach rechts verschieben (anpassen, wie gewünscht) */
+}
+
+#search-block .form-group {
+display: grid;
+grid-template-columns: 0.9fr 0.1fr;
+}
+
+.breadcrumb li a img {
+float: unset;
+padding-right: 5px;
+vertical-align: middle;
+}
