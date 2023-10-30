@@ -393,7 +393,8 @@ th a{
 }
 
 header {
-    background: url("https://e-learning.ess-erfurt.de/web/css/themes/ESS/images/background.png");
+  background-color: #f8a41e;
+    background-image: url("https://e-learning.ess-erfurt.de/web/css/themes/ESS/images/background.png") -50px;
   background-repeat: no-repeat;
 }
 
