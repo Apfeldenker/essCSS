@@ -394,8 +394,9 @@ th a{
 
 header {
   background-color: #f8a41e;
-    background-image: url("https://e-learning.ess-erfurt.de/web/css/themes/ESS/images/background.png") -50px;
+    background-image: url("https://e-learning.ess-erfurt.de/web/css/themes/ESS/images/background.png");
   background-repeat: no-repeat;
+  background-position: top;
 }
 
 a.thumbnail.active,
