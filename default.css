@@ -393,7 +393,8 @@ th a{
 }
 
 header {
-    background: url("https://e-learning.ess-erfurt.de/web/css/themes/ESS/images/background.png") repeat-x center 50px;
+    background: url("https://e-learning.ess-erfurt.de/web/css/themes/ESS/images/background.png");
+  background-repeat: no-repeat;
 }
 
 a.thumbnail.active,
